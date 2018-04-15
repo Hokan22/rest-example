@@ -23,6 +23,10 @@
 4. Start the application ```php -S localhost:8000 -t public```
 5. Go to ```localhost:8000/api/candidate``` to get a json with all generated candidates
 
+## Tests
+
+To run tests run the command ```composer test```.
+
 ## License
 
 The project is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
