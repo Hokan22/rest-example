@@ -13,5 +13,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Candidate extends Model
 {
+    public $timestamps = false;
+
     protected $fillable = ['vorname', 'nachname', 'firma', 'aktuelle_position'];
 }
