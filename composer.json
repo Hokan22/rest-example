@@ -1,7 +1,7 @@
 {
-    "name": "laravel/lumen",
-    "description": "The Laravel Lumen Framework.",
-    "keywords": ["framework", "laravel", "lumen"],
+    "name": "hokan22/rest-example",
+    "description": "Basic Rest Example",
+    "keywords": ["rest", "example", "laravel", "lumen"],
     "license": "MIT",
     "type": "project",
     "require": {
