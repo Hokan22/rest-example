@@ -11,6 +11,19 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
+$router->get('/', function() use ($router) {
+    return "Lumen RESTful API for Coding Task";
+});
+
+$router->group(['prefix' => 'api'], function($router)
+{
+    $router->get('candidate','CandidateController@index');
+
+    $router->get('candidate/{id}','CandidateController@getcandidate');
+
+    $router->post('candidate','CandidateController@createCandidate');
+
+    $router->put('candidate/{id}','CandidateController@updateCandidate');
+
+    $router->delete('candidate/{id}','CandidateController@deleteCandidate');
 });
