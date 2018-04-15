@@ -17,13 +17,15 @@ $router->get('/', function() use ($router) {
 
 $router->group(['prefix' => 'api'], function($router)
 {
-    $router->get('candidate','CandidateController@index');
+    $router->get('candidate', 'CandidateController@index');
 
-    $router->get('candidate/{id}','CandidateController@getcandidate');
+    $router->get('candidate/{id}', 'CandidateController@getcandidate');
 
-    $router->post('candidate','CandidateController@createCandidate');
+    $router->post('candidate', 'CandidateController@createCandidate');
 
-    $router->put('candidate/{id}','CandidateController@updateCandidate');
+    $router->put('candidate/{id}', 'CandidateController@updateCandidate');
 
-    $router->delete('candidate/{id}','CandidateController@deleteCandidate');
+    $router->delete('candidate/{id}', 'CandidateController@deleteCandidate');
+
+    $router->post('candidate/find', 'CandidateController@findCandidate');
 });

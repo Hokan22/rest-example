@@ -49,4 +49,26 @@ class CandidateController extends Controller
 
         return response()->json($Candidate);
     }
+
+    public function findCandidate(Request $request)
+    {
+        $Query = Candidate::where('vorname', $request->input('vorname'))
+            ->where('nachname', $request->input('nachname'));
+
+        if ($request->has('firma')) {
+            $Query->where('firma', $request->input('firma'));
+        }
+
+        if ($request->has('aktuelle_position')) {
+            $Query->where('aktuelle_position', $request->input('aktuelle_position'));
+        }
+
+        $Candidate = $Query->get();
+
+        if ($Candidate->count() == 0) {
+            return response()->json(['error' => 'No Candidate found'], 404);
+        }
+
+        return response()->json($Candidate);
+    }
 }
