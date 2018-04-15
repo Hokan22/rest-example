@@ -16,7 +16,7 @@ class CandidateController extends Controller
 
     public function getCandidate($id)
     {
-        $Candidate  = Candidate::find($id);
+        $Candidate  = Candidate::findOrFail($id);
 
         return response()->json($Candidate);
     }
@@ -30,7 +30,7 @@ class CandidateController extends Controller
 
     public function deleteCandidate($id)
     {
-        $Candidate  = Candidate::find($id);
+        $Candidate  = Candidate::findOrFail($id);
         $Candidate->delete();
 
         return response()->json('deleted');
@@ -38,7 +38,7 @@ class CandidateController extends Controller
 
     public function updateCandidate(Request $request,$id)
     {
-        $Candidate  = Candidate::find($id);
+        $Candidate  = Candidate::findOrFail($id);
 
         $Candidate->vorname = $request->input('vorname');
         $Candidate->nachname = $request->input('nachname');

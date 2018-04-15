@@ -48,6 +48,8 @@ class Handler extends ExceptionHandler
     {
         if (method_exists( $e, 'getStatusCode' )) {
             $status = $e->getStatusCode();
+        } elseif ($e instanceof ModelNotFoundException) {
+            $status = 404;
         } else {
             $status = 500;
         }
