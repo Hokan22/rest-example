@@ -7,7 +7,6 @@
 - OpenSSL PHP Extension
 - PDO PHP Extension
 - Mbstring PHP Extension
-- Sqlite3
 
 ## Setup
 
